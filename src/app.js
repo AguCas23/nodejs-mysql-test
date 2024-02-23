@@ -8,9 +8,9 @@ const app = express()
 
 app.use(express.json())
 
-app.use(indexRouter)
+app.use('/', indexRouter)
 
-app.use(employesRouter)
+app.use('/api', employesRouter)
 
 app.use((req, res, next) => {
     res.status(404).json({
